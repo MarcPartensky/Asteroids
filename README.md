@@ -6,21 +6,22 @@
 ## Usage
 Multiplayer web based game of space battle.
 
-Run with:
+### Run
 ```
 npm start
 # or
 yarn build
 ```
 
-This project has been created using **webpack scaffold**, you can now run
+Uses port 8000 by default unless `PORT` environment variable is defined.
 
+### Build
+This project has been created using **webpack scaffold**, you can now run
 ```
 npm run build
 # or
 yarn build
 ```
-
 to bundle your application
 
 ## How it works?
