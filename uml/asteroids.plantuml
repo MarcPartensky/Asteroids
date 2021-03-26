@@ -1,0 +1,129 @@
+@startuml asteroids
+skinparam style strictuml
+skinparam DefaultFontName Arial
+skinparam DefaultFontSize 16
+skinparam DefaultFontStyle bold
+skinparam ArrowThickness 2.2
+skinparam ArrowColor #gray
+hide empty members
+
+class "GameServer" as GameServer {
+  game : Game
+  dt: float
+}
+
+class "GameClient(Manager)" as GameClient {
+  game : Game
+  context: Context
+  dt: float
+}
+
+class "Context" as Context {
+    plane: Plane
+    context: Context
+}
+
+class "Game" as Game {
+    superGroup: SuperGroup
+    gameMap: GameMap
+    static random()
+    update(dt)
+    show(ctx)
+    limit()
+}
+
+class "GameMap" as GameMap {
+    show(ctx)
+    limit()
+}
+
+class "SuperGroup" as SuperGroup {
+    spaceshipGroup : SpaceshipGroup
+    asteroidGroup: AsteroidGroup
+    missileGroup: MissileGroup
+    meteorGroup: meteorGroup
+    static random()
+    update(dt)
+    show(ctx)
+    collide()
+}
+
+class "AsteroidGroup" as AsteroidGroup {
+    static random()
+    update(dt)
+    show(ctx)
+}
+
+class "Asteroid" as Asteroid {
+    form: Figure
+    body: Body
+    static random()
+    update(dt)
+    show(ctx)
+}
+
+class "SpaceshipGroup" as SpaceshipGroup {
+    static random()
+    update(dt)
+    show(ctx)
+}
+
+class "Spaceship" as Spaceship {
+    form : Figure
+    body: Body
+    static random()
+    update(dt)
+    show(ctx)
+    follow()
+    shoot()
+    explode()
+}
+
+class "MeteorGroup" as MeteorGroup {
+    static random()
+    update(dt)
+    show(ctx)
+}
+
+class "Meteor" as Meteor {
+    form: Figure
+    body: Body
+    static random()
+    update(dt)
+    show(ctx)
+}
+
+class "MissileGroup" as MissileGroup {
+    static random()
+    update(dt)
+    show(ctx)
+}
+
+class "Missile" as Missile {
+    form: Figure
+    body: Body
+    static random()
+    update(dt)
+    show(ctx)
+}
+
+
+GameServer *-- Game
+GameClient *-- Game
+
+GameClient *-- Context
+
+Game *-- GameMap
+Game *-- SuperGroup
+
+SuperGroup *--  SpaceshipGroup
+SuperGroup *--  MeteorGroup
+SuperGroup *--  AsteroidGroup
+SuperGroup *-- MissileGroup
+
+SpaceshipGroup "1" *-- "*" Spaceship
+MissileGroup "1" *-- "*" Missile
+MeteorGroup "1" *-- "*" Meteor
+AsteroidGroup "1" *-- "*" Asteroid
+
+@enduml

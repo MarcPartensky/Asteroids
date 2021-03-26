@@ -1,0 +1,57 @@
+@startuml maths
+skinparam style strictuml
+skinparam DefaultFontName Arial
+skinparam DefaultFontSize 16
+skinparam DefaultFontStyle bold
+skinparam ArrowThickness 2.2
+skinparam ArrowColor #gray
+hide empty members
+
+class Array {
+}
+
+class Tensor {
+    order: int
+}
+
+class Vector {
+    order:int = 1
+    get/set x()
+    get/set y()
+    get/set z()
+    get/set angle()
+    get/set norm()
+    add()
+    sub()
+    mul()
+    show()
+}
+
+class Matrix {
+    order:int = 2
+    get/set vectors() 
+}
+
+class Motion {
+    order:int = 2
+    get/set vectors()
+    get/set width()
+    get/set height()
+    update()
+    show()
+}
+
+class Body {
+    order: int = 3
+    get/set motions()
+    update()
+}
+
+Array <|-- Tensor
+Tensor <|-- Vector
+Tensor <|-- Matrix
+Tensor <|-- Body
+Matrix <|-- Motion
+Vector <|-- Point
+
+@enduml

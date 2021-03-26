@@ -1,0 +1,11 @@
+Régler le problème des attributs static de classes pour webpack.
+
+Utiliser webAPck
+https://webpack.js.org/
+
+
+
+Regarder Meteor pour propulser le projet vers l'infini
+https://www.meteor.com/
+
+Utiliser du protobuf
