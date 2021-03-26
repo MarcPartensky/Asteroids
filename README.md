@@ -1,4 +1,9 @@
 # Asteroids
+
+## Demo
+
+
+## Usage
 Multiplayer web based game of space battle.
 
 Run with:
@@ -17,3 +22,13 @@ yarn build
 ```
 
 to bundle your application
+
+## How it works?
+
+### Objects hierarchy 
+
+![asteroids](./out/uml/asteroids/asteroids.png)
+
+![forms](./out/uml/forms/forms.png)
+
+![maths](./out/uml/maths/maths.png)
