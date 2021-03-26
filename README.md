@@ -25,10 +25,13 @@ to bundle your application
 
 ## How it works?
 
-### Objects hierarchy 
+This project is based on a custom geometrical library based on native canvas for drawing geometrical objects
 
+### Game hierarchy 
 ![asteroids](./out/uml/asteroids/asteroids.png)
 
+### Geometrical hierarchy 
 ![forms](./out/uml/forms/forms.png)
 
+### Maths hierarchy 
 ![maths](./out/uml/maths/maths.png)
