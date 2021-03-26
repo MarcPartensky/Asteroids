@@ -35,3 +35,9 @@ This project is based on a custom geometrical library based on native canvas for
 
 ### Maths hierarchy 
 ![maths](./out/uml/maths/maths.png)
+
+## Credits
+Made by Marc Partensky and Alexandre Bigot
+
+## License
+**MIT**
