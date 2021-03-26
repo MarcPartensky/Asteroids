@@ -1,0 +1,117 @@
+@startuml forms
+skinparam style strictuml
+skinparam DefaultFontName Arial
+skinparam DefaultFontSize 16
+skinparam DefaultFontStyle bold
+skinparam ArrowThickness 2.2
+skinparam ArrowColor #gray
+hide empty members
+
+class Figure {
+    fill: Bool
+    lineWidth: Number
+    color: Color
+    show(ctx)
+}
+
+class Form {
+    get/set center()
+    get/set perimeter()
+    get/set area()
+    show(ctx)
+}
+
+class BasePolygon {
+    get/set center()
+    get/set perimeter()
+    get/set area()
+    get/set segments()
+    show(ctx)
+}
+
+class Point {
+    show(ctx)
+}
+
+class Vector {
+    show(ctx)
+}
+
+class Segment {
+    points: Matrix[Point]
+}
+
+class Line {
+    point: Point
+    vector: Vector
+}
+
+class Circle {
+    center: Vector
+    radius: Number
+    get/set perimeter()
+    get/set area()
+    show(ctx)
+}
+
+class Polygon {
+    matrix: Matrix[Vector]
+    get length = n
+    get/set center()
+    get/set perimeter()
+    get/set area()
+    get/set points()
+    get/set segments()
+    show(ctx)
+}
+
+class Triangle {
+    matrix: Matrix[n][Vector]
+    get length = 3
+    get/set center()
+    get/set perimeter()
+    get/set area()
+    get/set points()
+    get/set segments()
+    show(ctx)
+}
+
+class Rectangle {
+    position: Vector
+    size: Vector
+    get length = 4
+    get/set center()
+    get/set perimeter()
+    get/set area()
+    get/set points()
+    get/set segments()
+    show(ctx)
+}
+
+class Square {
+    x: Number
+    y: Number
+    s: Number
+    get length = 4
+    get/set center()
+    get/set perimeter()
+    get/set area()
+    get/set points()
+    get/set segments()
+    show(ctx)
+}
+
+Array <|-- Tensor
+Tensor <|-- Vector
+Vector <|-- Point
+Figure <|-- Form
+Figure <|-- Segment
+Figure <|-- Line
+Form <|-- BasePolygon
+Form <|-- Circle
+BasePolygon <|-- Polygon
+BasePolygon <|-- Square
+BasePolygon <|-- Rectangle
+Polygon <|-- Triangle
+
+@enduml

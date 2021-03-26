@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Playground</title>
+    <style>
+      #html {
+        background-color: black;
+      }
+      #canvas {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        border-width: thick;
+        border-color: white;
+      }
+    </style>
+  </head>
+  <body bgcolor="#000000">
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <!-- Web Dependencies -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script> -->
+    <!-- <script src="https://github.com/josephg/noisejs" charset="utf-8"></script> -->
+    <!-- Own Dependencies -->
+    <!-- Tools and tests -->
+    <script src="libs/tools.js" charset="utf-8"></script>
+    <script src="libs/test.js" charset="utf-8"></script>
+    <!-- Base types -->
+    <script src="libs/iterator.js" charset="utf-8"></script>
+    <script src="libs/dict.js" charset="utf-8"></script>
+    <script src="libs/tree.js" charset="uft-8"></script>
+    <!-- Math types -->
+    <script src="libs/tensor.js" charset="utf-8"></script>
+    <script src="libs/vector.js" charset="utf-8"></script>
+    <script src="libs/matrix.js" charset="utf-8"></script>
+    <!-- Visual types -->
+    <script src="libs/color.js" charset="utf-8"></script>
+    <script src="libs/point.js" charset="utf-8"></script>
+    <script src="libs/figure.js" charset="utf-8"></script>
+    <script src="libs/form.js" charset="utf-8"></script>
+    <script src="libs/circle.js" charset="utf-8"></script>
+    <script src="libs/line.js" charset="utf-8"></script>
+    <script src="libs/segment.js" charset="utf-8"></script>
+    <script src="libs/basepolygon.js" charset="utf-8"></script>
+    <script src="libs/polygon.js" charset="utf-8"></script>
+    <script src="libs/triangle.js" charset="utf-8"></script>
+    <script src="libs/rectangle.js" charset="utf-8"></script>
+    <script src="libs/square.js" charset="utf-8"></script>
+
+    <script src="libs/manager.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+
+        class Game {
+            constructor() {
+                this.s1 = Segment.random();
+                this.s2 = Segment.random();
+            }
+            show(ctx) {
+                this.s1.show(ctx);
+                this.s2.show(ctx);
+            }
+            update(dt) {
+                if (s1.line.cross(s2.line)) {
+                    s1.color = "red";
+                    s2.color = "red";
+                }
+            }
+        }
+
+        class GameManager extends Manager {
+            update(dt) {
+                this.s1.p1 = this.context.getFromScreen(this.mouse);
+                super.update(dt);
+            }
+        }
+        const m = new GameManager(canvas, game);
+    </script>
+  </body>
+</html>

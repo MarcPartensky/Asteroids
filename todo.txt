@@ -1,0 +1,9 @@
+Utiliser webAPck
+https://webpack.js.org/
+
+
+
+Regarder Meteor pour propulser le projet vers l'infini
+https://www.meteor.com/
+
+Utiliser du protobuf
