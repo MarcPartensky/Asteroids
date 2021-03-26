@@ -34,11 +34,11 @@ const files = [
     // Tools and tests
     // "libs/tools.js",
     // "libs/test.js",
-    //Base types  
+    //Base types
     "libs/iterator.js",
     "libs/dict.js",
     "libs/tree.js",
-    // Math types    
+    // Math types
     "libs/group.js",
     // "libs/tensor.js",
     // "libs/vector.js",
@@ -99,7 +99,7 @@ app.use('/dist', express.static('dist'));
 
 
 const __dirname = path.resolve();
-  
+
 console.log(__dirname)
 
 // var path = __dirname.split("/");
@@ -115,4 +115,4 @@ const game = Game.random();
 //console.log(`Le group ${game.group.get('asteroidGroup')}`);
 const gameServer = new GameServer(game, io);
 gameServer.setUp();
-gameServer.main(); 
+gameServer.main();
